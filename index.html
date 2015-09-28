@@ -32,6 +32,7 @@
             
     		var create_label_texture = function(txt) {
         		var canvas = document.createElement('canvas');
+        		canvas.className = "canvas_class";
                 var canvas_size = 1024;
                 canvas.width = canvas_size;
                 canvas.height = canvas_size;
@@ -39,9 +40,10 @@
                 context.textAlign = 'center';
                 context.textBaseline="middle";
                 context.font = 'bolder 128px sans-serif';
-                context.fillStyle="#FF0000";
-                context.strokeStyle="#000000";
-                context.fillText(txt, canvas_size/2, canvas_size/2);                                
+                context.fillStyle="#ff0000";
+                context.strokeStyle = "rgba(255, 0, 0, 0)";
+                context.fillText(txt, canvas_size/2, canvas_size/2);
+                context.strokeText(txt, canvas_size/2, canvas_size/2);
                 var texture = new THREE.Texture(canvas);
                 texture.needsUpdate = true;
                 return texture;
@@ -64,7 +66,7 @@
             var label_material = new THREE.PointsMaterial({
                 map: label_texture,
                 size: 10,
-                transparent: false,
+                transparent: true,
                 alphaTest: 0.15
             });
             var label_vertex = new THREE.Vector3(1, 0, 1);
