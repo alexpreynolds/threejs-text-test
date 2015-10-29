@@ -69,8 +69,28 @@
                 transparent: true,
                 alphaTest: 0.15
             });
-            var label_vertex = new THREE.Vector3(1, 0, 1);
-            labels.vertices.push(label_vertex);
+            var label_vertex_00 = new THREE.Vector3(1, 0, 1);
+	    var label_vertex_01 = new THREE.Vector3(1.2, 0, 1);
+	    var label_vertex_02 = new THREE.Vector3(0.8, 0, 1);
+	    var label_vertex_03 = new THREE.Vector3(0.8, 0, 1.2);
+	    var label_vertex_04 = new THREE.Vector3(0.8, 1, 1.2);
+	    var label_vertex_05 = new THREE.Vector3(1.2, 1, 1.2);	    	    
+	    var label_vertex_06 = new THREE.Vector3(1.2, 1, 1.2);
+	    var label_vertex_07 = new THREE.Vector3(1, 1, 0.8);
+	    var label_vertex_08 = new THREE.Vector3(1, 1.2, 0.8);
+	    var label_vertex_09 = new THREE.Vector3(1.2, 1.2, 1.2);
+	    
+            labels.vertices.push(label_vertex_00);
+	    labels.vertices.push(label_vertex_01);
+	    labels.vertices.push(label_vertex_02);	    
+	    labels.vertices.push(label_vertex_03);
+	    labels.vertices.push(label_vertex_04);
+	    labels.vertices.push(label_vertex_05);
+	    labels.vertices.push(label_vertex_06);
+	    labels.vertices.push(label_vertex_07);
+	    labels.vertices.push(label_vertex_08);
+	    labels.vertices.push(label_vertex_09);
+
             var label_system = new THREE.Points(labels, label_material);
             scene.add(label_system);
             camera.position.z = 5;
