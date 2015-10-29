@@ -29,11 +29,11 @@
                 click_event.initMouseEvent('click', true, true, window, 1, 0, 0, 0, 0, false, false, false, false, 0, null);
                 link.dispatchEvent(click_event);
             };
-            
-    		var create_label_texture = function(txt) {
-        		var canvas = document.createElement('canvas');
-        		canvas.className = "canvas_class";
-                var canvas_size = 1024;
+
+            var create_label_texture = function(txt) {
+		var canvas = document.createElement('canvas');
+		canvas.className = "canvas_class";
+                var canvas_size = 2048;
                 canvas.width = canvas_size;
                 canvas.height = canvas_size;
                 var context = canvas.getContext('2d');
@@ -49,7 +49,7 @@
                 return texture;
             };            
             
-			var scene = new THREE.Scene();
+            var scene = new THREE.Scene();
             var camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 );
             var renderer = new THREE.WebGLRenderer( { alpha: true, antialias: true, preserveDrawingBuffer: true } );
             renderer.setClearColor( 0xffffff, 1);
@@ -62,10 +62,10 @@
             scene.add( cube );
 
             var labels = new THREE.Geometry();
-            var label_texture = create_label_texture("Click me");
+            var label_texture = create_label_texture("Click me (Натисніть тут)");
             var label_material = new THREE.PointsMaterial({
                 map: label_texture,
-                size: 10,
+                size: 2,
                 transparent: true,
                 alphaTest: 0.15
             });
